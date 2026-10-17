@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Planner - Schedule</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <h2>Study Planner</h2>
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/tasks">Tasks</a>
+            <a href="/schedule">Schedule</a>
+            <a href="/attendance">Attendance</a>
+            <a href="/progress">Progress</a>
+            <a href="/pomodoro">Pomodoro</a>
+        </div>
+    </nav>
+    <div class="section">
+        <h1>Study Schedule</h1>
+        <p class="small-text">
+            My weekly study plan
+        </p>
+        <% schedule.forEach(function(item) { %>
+            <div class="schedule-row">
+                <div>
+                    <b><%= item.day %></b>
+                </div>
+                <div>
+                    <%= item.time %>
+                </div>
+                <div>
+                    <b><%= item.subject %></b>
+                    <br>
+                    <span class="small-text">
+                        <%= item.topic %>
+                    </span>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+[
+    {
+        "day": "Monday",
+        "time": "7:00 PM - 8:00 PM",
+        "subject": "DBMS",
+        "topic": "Normalization"
+    },
+    {
+        "day": "Tuesday",
+        "time": "7:00 PM - 8:00 PM",
+        "subject": "ADA",
+        "topic": "Sorting Algorithms"
+    },
+    {
+        "day": "Wednesday",
+        "time": "7:00 PM - 8:00 PM",
+        "subject": "Cyber Security",
+        "topic": "Cyber Crime"
+    },
+    {
+        "day": "Thursday",
+        "time": "7:00 PM - 8:00 PM",
+        "subject": "WAP",
+        "topic": "Node.js"
+    },
+    {
+        "day": "Friday",
+        "time": "7:00 PM - 8:00 PM",
+        "subject": "DBMS",
+        "topic": "Transactions"
+    }
+]

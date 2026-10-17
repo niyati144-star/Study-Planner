@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Planner - Pomodoro</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <h2>Study Planner</h2>
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/tasks">Tasks</a>
+            <a href="/schedule">Schedule</a>
+            <a href="/attendance">Attendance</a>
+            <a href="/progress">Progress</a>
+            <a href="/pomodoro">Pomodoro</a>
+        </div>
+    </nav>
+    <div class="section pomodoro">
+        <h1>Pomodoro Timer</h1>
+        <p>
+            Focus on your study for 25 minutes.
+        </p>
+        <div id="timer">
+            25:00
+        </div>
+        <button onclick="startTimer()">
+            Start
+        </button>
+        <button onclick="pauseTimer()">
+            Pause
+        </button>
+        <button onclick="resetTimer()">
+            Reset
+        </button>
+        <p id="timerMessage"></p>
+    </div>
+</div>
+<script src="/script.js"></script>
+</body>
+</html>

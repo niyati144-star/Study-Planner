@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "subject": "DBMS",
+        "present": 18,
+        "total": 22
+    },
+    {
+        "id": 2,
+        "subject": "ADA",
+        "present": 17,
+        "total": 22
+    },
+    {
+        "id": 3,
+        "subject": "WAP",
+        "present": 19,
+        "total": 22
+    },
+    {
+        "id": 4,
+        "subject": "Cyber Security",
+        "present": 20,
+        "total": 22
+    }
+]

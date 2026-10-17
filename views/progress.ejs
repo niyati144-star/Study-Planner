@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Planner - Progress</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <h2>Study Planner</h2>
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/tasks">Tasks</a>
+            <a href="/schedule">Schedule</a>
+            <a href="/attendance">Attendance</a>
+            <a href="/progress">Progress</a>
+            <a href="/pomodoro">Pomodoro</a>
+        </div>
+    </nav>
+    <div class="section">
+        <h1>Subject Progress</h1>
+        <p class="small-text">
+            Track how much of each subject you have completed.
+        </p>
+        <% subjects.forEach(function(item) { %>
+            <div class="subject-progress">
+                <div class="progress-title">
+                    <b>
+                        <%= item.name %>
+                    </b>
+                    <span>
+                        <%= item.progress %>%
+                    </span>
+                </div>
+                <div class="progress-bar">
+                    <div
+                        class="progress"
+                        style="width:<%= item.progress %>%"
+                    ></div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    <div class="section">
+        <h2>Update Subject Progress</h2>
+        <form
+            action="/update-progress"
+            method="POST"
+        >
+            <select name="id" required>
+                <% subjects.forEach(function(item) { %>
+                    <option value="<%= item.id %>">
+                        <%= item.name %>
+                    </option>
+                <% }); %>
+            </select>
+            <input
+                type="number"
+                name="progress"
+                min="0"
+                max="100"
+                placeholder="Enter percentage"
+                required
+            >
+            <button type="submit">
+                Update Progress
+            </button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

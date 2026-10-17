@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Planner - Attendance</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <h2>Study Planner</h2>
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/tasks">Tasks</a>
+            <a href="/schedule">Schedule</a>
+            <a href="/attendance">Attendance</a>
+            <a href="/progress">Progress</a>
+            <a href="/pomodoro">Pomodoro</a>
+        </div>
+    </nav>
+    <div class="section">
+        <h1>Attendance</h1>
+        <p class="small-text">
+            Keep track of your subject attendance.
+        </p>
+        <% attendance.forEach(function(item) { %>
+            <%
+                let percentage = 0;
+                if (item.total > 0) {
+                    percentage = Math.round(
+                        (item.present / item.total) * 100
+                    );
+                }
+            %>
+            <div class="attendance-row">
+                <div>
+                    <h3>
+                        <%= item.subject %>
+                    </h3>
+                    <span class="small-text">
+                        <%= item.present %>
+                        /
+                        <%= item.total %>
+                        classes
+                    </span>
+                </div>
+                <strong class="attendance-percent">
+                    <%= percentage %>%
+                </strong>
+                <div>
+                    <form
+                        action="/attendance/<%= item.id %>/present"
+                        method="POST"
+                        style="display:inline;"
+                    >
+                        <button type="submit">
+                            Present
+                        </button>
+                    </form>
+                    <form
+                        action="/attendance/<%= item.id %>/absent"
+                        method="POST"
+                        style="display:inline;"
+                    >
+                        <button type="submit">
+                            Absent
+                        </button>
+                    </form>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+</body>
+</html>

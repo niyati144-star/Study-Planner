@@ -1,0 +1,26 @@
+[
+  {
+    "id": 2,
+    "task": "Study Selection Sort",
+    "subject": "ADA",
+    "date": "2026-10-02",
+    "priority": "Medium",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "task": "Read Cyber Security Unit 2",
+    "subject": "Cyber Security",
+    "date": "2026-10-02",
+    "priority": "Medium",
+    "completed": false
+  },
+  {
+    "id": 1791003766288,
+    "task": "Wap practial ",
+    "subject": "WAD",
+    "date": "2026-10-03",
+    "priority": "High",
+    "completed": false
+  }
+]

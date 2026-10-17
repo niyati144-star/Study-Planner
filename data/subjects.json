@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "DBMS",
+        "progress": 80
+    },
+    {
+        "id": 2,
+        "name": "ADA",
+        "progress": 60
+    },
+    {
+        "id": 3,
+        "name": "WAP",
+        "progress": 70
+    },
+    {
+        "id": 4,
+        "name": "Cyber Security",
+        "progress": 50
+    }
+]

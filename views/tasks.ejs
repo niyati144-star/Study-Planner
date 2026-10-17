@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Planner - Tasks</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <h2>Study Planner</h2>
+        <div class="nav-links">
+            <a href="/">Dashboard</a>
+            <a href="/tasks">Tasks</a>
+            <a href="/schedule">Schedule</a>
+            <a href="/attendance">Attendance</a>
+            <a href="/progress">Progress</a>
+            <a href="/pomodoro">Pomodoro</a>
+        </div>
+    </nav>
+    <div class="section">
+        <h1>Study Tasks</h1>
+        <p class="small-text">
+            Add and manage your daily study tasks.
+        </p>
+        <form action="/add-task" method="POST" class="task-form">
+            <input
+                type="text"
+                name="task"
+                placeholder="Task name"
+                required
+            >
+            <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+            >
+            <input
+                type="date"
+                name="date"
+                required
+            >
+            <select name="priority" required>
+                <option value="">
+                    Priority
+                </option>
+                <option value="High">
+                    High
+                </option>
+                <option value="Medium">
+                    Medium
+                </option>
+                <option value="Low">
+                    Low
+                </option>
+            </select>
+            <button type="submit">
+                Add Task
+            </button>
+        </form>
+    </div>
+    <div class="section">
+        <h2>My Tasks</h2>
+        <input
+            type="text"
+            id="searchTask"
+            class="search"
+            placeholder="Search task or subject..."
+            onkeyup="searchTasks()"
+        >
+        <% if (tasks.length === 0) { %>
+            <p>No tasks added yet.</p>
+        <% } %>
+        <% tasks.forEach(function(item) { %>
+            <div class="task task-item">
+                <div>
+                    <div class="task-name">
+                        <%= item.task %>
+                    </div>
+                    <div class="task-subject">
+                        <%= item.subject %>
+                        |
+                        <%= item.date %>
+                        |
+                        <%= item.priority %> Priority
+                    </div>
+                </div>
+                <div class="task-buttons">
+                    <% if (item.completed) { %>
+                        <span class="status completed">
+                            Completed
+                        </span>
+                    <% } else { %>
+                        <span class="status pending">
+                            Pending
+                        </span>
+                    <% } %>
+                    <form
+                        action="/complete-task/<%= item.id %>"
+                        method="POST"
+                    >
+                        <button type="submit">
+                            <%= item.completed
+                                ? "Undo"
+                                : "Complete" %>
+                        </button>
+                    </form>
+                    <form
+                        action="/delete-task/<%= item.id %>"
+                        method="POST"
+                    >
+                        <button type="submit"
+                                class="delete-button">
+                            Delete
+                        </button>
+                    </form>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+<script src="/script.js"></script>
+</body>
+</html>
